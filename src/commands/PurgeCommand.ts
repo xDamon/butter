@@ -6,6 +6,7 @@ import {
 	Command,
 	middleware,
 	args,
+	userPermissions,
 	clientPermissions,
 	r
 } from "@discord-yuh/standard";
@@ -24,13 +25,8 @@ export class PurgeCommand extends Command {
 	}
 
 	@middleware(args(r.integer))
-	@middleware(
-		clientPermissions(
-			"SEND_MESSAGES",
-			"MANAGE_MESSAGES",
-			"READ_MESSAGE_HISTORY"
-		)
-	)
+	@middleware(userPermissions("MANAGE_MESSAGES", "READ_MESSAGE_HISTORY"))
+	@middleware(clientPermissions("MANAGE_MESSAGES", "READ_MESSAGE_HISTORY"))
 	public async execute(message: Message, [amount]: [number]): Promise<any> {
 		try {
 			await message.channel.bulkDelete(amount + 1);
