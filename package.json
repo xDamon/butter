@@ -1,0 +1,40 @@
+{
+  "name": "butter",
+  "version": "1.0.0",
+  "description": "A discord bot",
+  "main": "dist/main.js",
+  "scripts": {
+    "compile": "gulp compile",
+    "start": "node dist/main.js",
+    "test": "npm run compile && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xDamon/butter.git"
+  },
+  "keywords": [
+    "Discord",
+    "Bot"
+  ],
+  "author": "Damon",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/xDamon/butter/issues"
+  },
+  "homepage": "https://github.com/xDamon/butter#readme",
+  "devDependencies": {
+    "@types/node": "^10.12.12",
+    "@types/node-fetch": "^2.1.4",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-typescript": "^5.0.0",
+    "merge-stream": "^1.0.1",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "@discord-yuh/standard": "github:discord-yuh/standard",
+    "discord.js": "^11.4.2",
+    "node-fetch": "^2.3.0"
+  }
+}
