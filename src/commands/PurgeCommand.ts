@@ -28,10 +28,14 @@ export class PurgeCommand extends Command {
 	@middleware(userPermissions("MANAGE_MESSAGES", "READ_MESSAGE_HISTORY"))
 	@middleware(clientPermissions("MANAGE_MESSAGES", "READ_MESSAGE_HISTORY"))
 	public async execute(message: Message, [amount]: [number]): Promise<any> {
-		try {
-			await message.channel.bulkDelete(amount + 1);
-		} catch {
-			await message.channel.send("Unable to bulk delete messages.");
+		if (amount <= 0) {
+			await message.channel.send("The amount must be more than zero.");
+		} else {
+			try {
+				await message.channel.bulkDelete(amount + 1);
+			} catch {
+				await message.channel.send("Unable to bulk delete messages.");
+			}
 		}
 	}
 }
