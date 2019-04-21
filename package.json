@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "gulp compile",
     "start": "node dist/main.js",
-    "test": "npm run compile && npm run start"
+		"test": "npm run compile && npm run start",
+		"prepare": "gulp compile"
   },
   "repository": {
     "type": "git",
