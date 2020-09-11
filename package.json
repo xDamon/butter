@@ -36,6 +36,6 @@
   "dependencies": {
     "@discord-yuh/standard": "github:discord-yuh/standard",
     "discord.js": "^11.4.2",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.6.1"
   }
 }
